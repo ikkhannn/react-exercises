@@ -1,37 +1,18 @@
 import React from 'react';
+import './Ninjas.css';
 
-const Ninjas = ({ninjas}) => {
-
-    // const ninjaList = ninjas.map(ninja =>{
-    //     if(ninja.age>30){
-    //     return (
-    //         <div className="ninja" key={ninja.id}>
-    //         <div>{ninja.name}</div>
-    //         <div>{ninja.age}</div>
-    //         <div>{ninja.belt}</div>
-
-    //     </div>
- 
-    //     )
-    //     } else{
-    //         return null;
-    //     }
-
-    // });
-
+const Ninjas = ({ninjas,deleteNinja}) => {
 
     const ninjaList = ninjas.map(ninja =>{
-
-        return ninja.age>30? (
-        
+       
+        return (
             <div className="ninja" key={ninja.id}>
                 <div>{ninja.name}</div>
                 <div>{ninja.age}</div>
                 <div>{ninja.belt}</div>
-
+                <button onClick={() => {deleteNinja(ninja.id)}}>Delete Ninja</button>
             </div>
-                
-        ):null;
+                )
 
     });
     return(
